@@ -1,14 +1,47 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 function Input() {
+    const [name, setName] = useState('')
+    const [price, setPrice] = useState('')
+
+    const inputName = (e) => {
+        setName(e.target.value)
+    }
+
+    const addComma = (e) => {
+        let returnString = e?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+        return returnString
+    }
+
+    const inputPrice = (e) => {
+        const { value } = e.target
+        let str = value.replaceAll(',', '')
+        setPrice(str)
+        const onlyNumber = value.replace(/[^0-9]/g, '')
+        setPrice(onlyNumber)
+    }
+
+    const sendBtn = () => {
+        if (name === '' || price === '') {
+            alert('이름과 가격을 입력해주세요')
+        } else {
+            alert(`'name: ${name}'은 'price: ${price}원'입니다`)
+        }
+    }
     return (
         <Background>
             <h2>Input</h2>
             <>
-                <InputBox type="text">이름<InputText /></InputBox>
-                <InputBox type="text">가격<InputText /></InputBox>
-                <Btn>저장</Btn>
+                <InputBox>이름
+                    <InputText type="text" onChange={inputName} />
+                </InputBox>
+                <InputBox>가격
+                    <InputText type="text"
+                        onChange={(e) => inputPrice(e)}
+                        value={addComma(price)} />
+                </InputBox>
+                <Btn onClick={sendBtn}>저장</Btn>
             </>
             <FloatNone />
         </Background>
