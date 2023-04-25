@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'styled-components';
 
-function FirstModal({ modal, setModal }) {
+function FirstModal({ modalFir, setModalFir }) {
+
     const firstModalClose = () => {
-        setModal(false)
+        setModalFir(false)
     }
 
     return (
-        <FirstModalBg isOpen={modal}>
+        <FirstModalBg isOpen={modalFir}>
             <FirstModalBox>
                 <p>닫기와 확인 버튼 2개가 있고, 외부 영역을 눌러도 모달이 닫히지 않아요.</p>
                 <FirstModalBtn name='닫기' onClick={firstModalClose}>닫기</FirstModalBtn>
@@ -18,6 +19,7 @@ function FirstModal({ modal, setModal }) {
 }
 
 const FirstModalBg = styled.div`
+      z-index: 5000;
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.6);

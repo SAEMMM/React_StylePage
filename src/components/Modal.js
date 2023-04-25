@@ -1,21 +1,31 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import FirstModal from '../modal/FirstModal'
+import SecondModal from '../modal/SecondModal'
 
 
 function Modal() {
-    const [modal, setModal] = useState(false)
+    const [modalFir, setModalFir] = useState(false)
     const firstModalOpen = () => {
-        setModal(true)
+        setModalFir(true)
     }
-    console.log('modal', modal)
+    console.log('1modal', modalFir)
+
+    const [modalSec, setModalSec] = useState(false)
+    const secondModalOpen = () => {
+        setModalSec(true)
+    }
+    console.log('2modal', modalSec)
 
     return (
         <>
+            <FirstModal modalFir={modalFir} setModalFir={setModalFir} />
+            <SecondModal modalSec={modalSec} setModalSec={setModalSec} />
             <Background>
                 <h2>Modal</h2>
                 <>
                     <BtnModal onClick={firstModalOpen}>open modal</BtnModal>
-                    <BtnModal overlay="close">open modal</BtnModal>
+                    <BtnModal onClick={secondModalOpen} overlay="close">open modal</BtnModal>
                 </>
             </Background>
         </>
