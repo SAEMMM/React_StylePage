@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components';
-import ModalPortal from '../ModalPortal';
+import Portal from '../Portal';
 
-function FirstModal({ modalFir, setModalFir }) {
+function FirstModal({ setModalFir }) {
 
     const firstModalClose = () => {
         setModalFir(false)
     }
 
     return (
-        <ModalPortal>
+        <Portal>
             <FirstModalBg>
                 <FirstModalBox>
                     <p>닫기와 확인 버튼 2개가 있고, 외부 영역을 눌러도 모달이 닫히지 않아요.</p>
@@ -17,7 +17,7 @@ function FirstModal({ modalFir, setModalFir }) {
                     <FirstModalBtn>확인</FirstModalBtn>
                 </FirstModalBox>
             </FirstModalBg>
-        </ModalPortal>
+        </Portal>
     )
 }
 
@@ -27,9 +27,7 @@ const FirstModalBg = styled.div`
       height: 100%;
       background-color: rgba(0, 0, 0, 0.6);
       position: fixed;
-      text-align: center;
-      display: flex;
-      justify-content: center;
+      top: -0px;
   `
 
 const FirstModalBox = styled.div`

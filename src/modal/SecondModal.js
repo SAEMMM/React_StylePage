@@ -1,22 +1,22 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import ModalPortal from '../ModalPortal';
+import Portal from '../Portal';
 
-function SecondModal({ modalSec, setModalSec }) {
+function SecondModal({ setModalSec }) {
 
     const secondModalClose = () => {
         setModalSec(false)
     }
 
     return (
-        <ModalPortal>
+        <Portal>
             <SecondModalBg onClick={secondModalClose}>
                 <SecondModalBox onClick={(e) => e.stopPropagation()}>
                     <p>닫기버튼 1개가 있고, 외부영역을 누르면 모달이 닫혀요.</p>
                     <SecondModalBtn onClick={secondModalClose}>X</SecondModalBtn>
                 </SecondModalBox>
             </SecondModalBg>
-        </ModalPortal>
+        </Portal>
     )
 }
 
@@ -27,7 +27,8 @@ const SecondModalBg = styled.div`
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.6);
-      position: absolute;
+      position: fixed;
+      top: -0px;
 `
 
 const SecondModalBox = styled.div`

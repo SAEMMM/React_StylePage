@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import Select from 'react-select'
+import Portal from '../Portal'
 
 function SelectComp() {
-    
+
     const selectOne = [
-        { value: 'react', label: '리액트'},
-        { value: 'java', label: '자바'},
-        { value: 'spring', label: '스프링'},
-        { value: 'reactNative', label: '리액트네이티브'},
+        { value: 'react', label: '리액트' },
+        { value: 'java', label: '자바' },
+        { value: 'spring', label: '스프링' },
+        { value: 'reactNative', label: '리액트네이티브' },
     ]
 
     const [select, setSelect] = useState(selectOne[0])
@@ -18,8 +19,10 @@ function SelectComp() {
         <Background>
             <BgBox>
                 <h2>Select</h2>
-                <SelectBoxOne options={selectOne}
-                onChange={setSelect} />
+                <Portal>
+                    <SelectBoxOne options={selectOne}
+                        onChange={setSelect} />
+                </Portal>
             </BgBox>
         </Background>
     )
@@ -43,7 +46,9 @@ const BgBox = styled.div`
 
 const SelectBoxOne = styled(Select)`
     width: 300px;
-    float: left;
+    /* top: 650px; */
+    top: -90px;
+    left: 30px;
     position: absolute;
-    z-index: 10;
+    z-index: 1000;
 `
