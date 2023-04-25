@@ -4,18 +4,26 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationArrow, faBell } from "@fortawesome/free-solid-svg-icons";
 
 function Button() {
+  const alertPrimaryBtn = () => {
+    alert('버튼을 만들어보세요')
+  }
+
+  const promptNativeBtn = () => {
+    prompt('어렵나요?', '')
+  }
+
   return (
     <Background>
       <h2>Button</h2>
       <BtnBox>
-        <LargeBtn color="Aquamarine">
+        <LargeBtn color="Aquamarine" onClick={alertPrimaryBtn}>
           Large Primary Button <FontAwesomeIcon icon={faLocationArrow} />
         </LargeBtn>
         <Btn color="Aquamarine" size="medium">Medium</Btn>
         <Btn color="Aquamarine">Small</Btn>
       </BtnBox>
       <BtnBox>
-        <LargeBtn color="LightSalmon">
+        <LargeBtn color="LightSalmon" onClick={promptNativeBtn}>
           Large Negative Button <FontAwesomeIcon icon={faBell} />
         </LargeBtn>
         <Btn color="LightSalmon" size="medium">Medium</Btn>
