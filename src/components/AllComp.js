@@ -1,9 +1,13 @@
+import FirstModal from '../modal/FirstModal';
+import Button from './Button';
+import Input from './Input';
+import Select from './Select';
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-
-function Modal() {
+function AllComp() {
     const [modal, setModal] = useState(false)
+
     const firstModalOpen = () => {
         setModal(true)
     }
@@ -11,6 +15,9 @@ function Modal() {
 
     return (
         <>
+            <FirstModal modal={modal} setModal={setModal} />
+            <Button />
+            <Input />
             <Background>
                 <h2>Modal</h2>
                 <>
@@ -18,13 +25,12 @@ function Modal() {
                     <BtnModal overlay="close">open modal</BtnModal>
                 </>
             </Background>
+            <Select />
         </>
     )
 }
 
-export default Modal
-
-
+export default AllComp
 
 const Background = styled.div`
   padding:20px;
