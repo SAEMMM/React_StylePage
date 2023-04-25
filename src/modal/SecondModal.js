@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import styled from 'styled-components'
 
 function SecondModal({ modalSec, setModalSec }) {
@@ -23,6 +23,7 @@ function SecondModal({ modalSec, setModalSec }) {
 export default SecondModal
 
 const SecondModalBg = styled.div`
+      z-index: 5000;
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.6);
@@ -43,5 +44,9 @@ const SecondModalBox = styled.div`
 `
 
 const SecondModalBtn = styled.button`
-
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
 `

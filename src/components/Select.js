@@ -6,18 +6,18 @@ function Select() {
         <Background>
             <BgBox>
                 <h2>Select</h2>
-                <SelectSt name="stack">
+                <SelectStFir name="stack">
                     <option value="react">리액트</option>
                     <option value="java">자바</option>
                     <option value="spring">스프링</option>
                     <option value="reactNative">리액트네이티브</option>
-                </SelectSt>
-                <SelectSt name="stack-hidden">
+                </SelectStFir>
+                <SelectStSec name="stack-hidden">
                     <option value="react">리액트</option>
                     <option value="java">자바</option>
                     <option value="spring">스프링</option>
                     <option value="reactNative">리액트네이티브</option>
-                </SelectSt>
+                </SelectStSec>
             </BgBox>
         </Background>
     )
@@ -31,15 +31,29 @@ const Background = styled.div`
 `
 
 const BgBox = styled.div`
-      width: 95%;
+      box-sizing: border-box;
+      width: 100%;
+      height: 150px;
       border: 2px solid Gainsboro;
-      padding-bottom: 40px;
+      overflow: hidden;
+      position: relative;
 `
 
-const SelectSt = styled.select`
+const SelectStFir = styled.select`
+    width: 200px;
+    height: 40px;
+    border: 1px solid red;
+    border-radius: 10px;
+    margin-right: 10px;
+    position: absolute;
+`
+
+const SelectStSec = styled.select`
     width: 200px;
     height: 40px;
     border: 1px solid Gainsboro;
     border-radius: 10px;
     margin-right: 10px;
+    position: absolute;
+    left: 210px;
 `
