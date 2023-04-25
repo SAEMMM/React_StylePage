@@ -14,7 +14,7 @@ Styled-components와 React의 기본 기능 구현
 **Button**
 - Styled-components의 props를 이용한 스타일 분리
 - Primary 버튼 클릭 시, 'alert'창 실행
-- Negative 버튼 클릭 시, 'propmpt'창 실행
+- Negative 버튼 클릭 시, 'prompt'창 실행
 
 **Input**
 - 이름, 가격 둘 중 하나라도 입력하지 않으면 '저장' 불가능
