@@ -1,19 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
+import FirstModal from '../modal/FirstModal'
+import SecondModal from '../modal/SecondModal'
 import styled from 'styled-components'
 
 
-function Modal({ setModalFir, setModalSec }) {
+function Modal() {
+    const [modalFir, setModalFir] = useState(false)
+    const [ModalSec, setModalSec] = useState(false)
 
     const firstModalOpen = () => {
         setModalFir(true)
     }
+    console.log('첫번째 모달', modalFir)
 
     const secondModalOpen = () => {
         setModalSec(true)
     }
+    console.log('두번째 모달', ModalSec)
 
     return (
         <>
+            {modalFir && <FirstModal open={modalFir} setModalFir={setModalFir} />}
+            {ModalSec && <SecondModal open={ModalSec} setModalSec={setModalSec} />}
             <Background>
                 <h2>Modal</h2>
                 <>

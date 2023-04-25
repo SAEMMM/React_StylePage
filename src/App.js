@@ -7,15 +7,11 @@ import SecondModal from "./modal/SecondModal";
 import { useState } from "react";
 
 function App() {
-  const [modalFir, setModalFir] = useState(false)
-  const [modalSec, setModalSec] = useState(false)
   return (
     <>
-      <FirstModal modalFir={modalFir} setModalFir={setModalFir} />
-      <SecondModal modalSec={modalSec} setModalSec={setModalSec} />
       <Button />
       <Input />
-      <Modal setModalFir={setModalFir} setModalSec={setModalSec} />
+      <Modal />
       <SelectComp />
     </>
   );

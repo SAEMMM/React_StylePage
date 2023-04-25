@@ -12,14 +12,14 @@ function SelectComp() {
     ]
 
     const [select, setSelect] = useState(selectOne[0])
+    console.log('select=', select)
 
     return (
         <Background>
             <BgBox>
                 <h2>Select</h2>
                 <SelectBoxOne options={selectOne}
-                onChange={setSelect}
-                defaultValue={selectOne[0]} />
+                onChange={setSelect} />
             </BgBox>
         </Background>
     )
@@ -37,9 +37,13 @@ const BgBox = styled.div`
       width: 100%;
       height: 150px;
       border: 2px solid Gainsboro;
+      overflow: hidden;
+      position: relative;
 `
 
 const SelectBoxOne = styled(Select)`
     width: 300px;
     float: left;
+    position: absolute;
+    z-index: 10;
 `

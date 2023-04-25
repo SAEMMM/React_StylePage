@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import styled from 'styled-components'
+import ModalPortal from '../ModalPortal';
 
 function SecondModal({ modalSec, setModalSec }) {
 
@@ -7,14 +8,15 @@ function SecondModal({ modalSec, setModalSec }) {
         setModalSec(false)
     }
 
-
     return (
-        <SecondModalBg isOpen={modalSec} onClick={secondModalClose}>
-            <SecondModalBox>
-                <p>닫기버튼 1개가 있고, 외부영역을 누르면 모달이 닫혀요.</p>
-                <SecondModalBtn onClick={secondModalClose}>X</SecondModalBtn>
-            </SecondModalBox>
-        </SecondModalBg>
+        <ModalPortal>
+            <SecondModalBg onClick={secondModalClose}>
+                <SecondModalBox onClick={(e) => e.stopPropagation()}>
+                    <p>닫기버튼 1개가 있고, 외부영역을 누르면 모달이 닫혀요.</p>
+                    <SecondModalBtn onClick={secondModalClose}>X</SecondModalBtn>
+                </SecondModalBox>
+            </SecondModalBg>
+        </ModalPortal>
     )
 }
 
@@ -26,7 +28,6 @@ const SecondModalBg = styled.div`
       height: 100%;
       background-color: rgba(0, 0, 0, 0.6);
       position: absolute;
-      display: ${props => props.isOpen ? "block" : "none"};
 `
 
 const SecondModalBox = styled.div`

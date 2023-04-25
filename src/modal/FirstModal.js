@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components';
+import ModalPortal from '../ModalPortal';
 
 function FirstModal({ modalFir, setModalFir }) {
 
@@ -8,13 +9,15 @@ function FirstModal({ modalFir, setModalFir }) {
     }
 
     return (
-        <FirstModalBg isOpen={modalFir}>
-            <FirstModalBox>
-                <p>닫기와 확인 버튼 2개가 있고, 외부 영역을 눌러도 모달이 닫히지 않아요.</p>
-                <FirstModalBtn name='닫기' onClick={firstModalClose}>닫기</FirstModalBtn>
-                <FirstModalBtn>확인</FirstModalBtn>
-            </FirstModalBox>
-        </FirstModalBg>
+        <ModalPortal>
+            <FirstModalBg>
+                <FirstModalBox>
+                    <p>닫기와 확인 버튼 2개가 있고, 외부 영역을 눌러도 모달이 닫히지 않아요.</p>
+                    <FirstModalBtn name='닫기' onClick={firstModalClose}>닫기</FirstModalBtn>
+                    <FirstModalBtn>확인</FirstModalBtn>
+                </FirstModalBox>
+            </FirstModalBg>
+        </ModalPortal>
     )
 }
 
@@ -24,7 +27,9 @@ const FirstModalBg = styled.div`
       height: 100%;
       background-color: rgba(0, 0, 0, 0.6);
       position: fixed;
-      display: ${props => props.isOpen ? "block" : "none"};
+      text-align: center;
+      display: flex;
+      justify-content: center;
   `
 
 const FirstModalBox = styled.div`
