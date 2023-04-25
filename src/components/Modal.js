@@ -1,29 +1,19 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import FirstModal from '../modal/FirstModal'
-import SecondModal from '../modal/SecondModal'
-import Button from './Button'
-import Input from './Input'
-import Select from './Select'
 
 
-function Modal() {
-    const [modalFir, setModalFir] = useState(false)
+function Modal({ setModalFir, setModalSec }) {
+
     const firstModalOpen = () => {
         setModalFir(true)
     }
 
-    const [modalSec, setModalSec] = useState(false)
     const secondModalOpen = () => {
         setModalSec(true)
     }
 
     return (
         <>
-            <FirstModal modalFir={modalFir} setModalFir={setModalFir} />
-            <SecondModal modalSec={modalSec} setModalSec={setModalSec} />
-            <Button />
-            <Input />
             <Background>
                 <h2>Modal</h2>
                 <>
@@ -31,7 +21,6 @@ function Modal() {
                     <BtnModal onClick={secondModalOpen} overlay="close">open modal</BtnModal>
                 </>
             </Background>
-            <Select />
         </>
     )
 }

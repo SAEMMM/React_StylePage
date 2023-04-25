@@ -3,8 +3,6 @@ import styled from 'styled-components'
 
 function SecondModal({ modalSec, setModalSec }) {
 
-    const el = useRef()
-
     const secondModalClose = () => {
         setModalSec(false)
     }

@@ -23,8 +23,8 @@ const FirstModalBg = styled.div`
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.6);
-      position: absolute;
-      display: ${props => props.isOpen ? "block" : "none"}
+      position: fixed;
+      display: ${props => props.isOpen ? "block" : "none"};
   `
 
 const FirstModalBox = styled.div`
