@@ -74,6 +74,10 @@ const Btn = styled.button`
     background-color: Aquamarine;
     color: DarkBlue;
     cursor: pointer;
+    &:hover {
+        background-color: LightSeaGreen;
+        transition: 0.5s;
+    }
 `
 
 const FloatNone = styled.div`

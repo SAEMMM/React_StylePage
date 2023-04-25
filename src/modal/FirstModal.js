@@ -48,6 +48,10 @@ const FirstModalBtn = styled.button`
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    &:hover {
+        background-color: ${props => props.name === '닫기' ? 'peru' : 'Lightseagreen'};
+        transition: 0.5s;
+    }
   `
 
 export default FirstModal

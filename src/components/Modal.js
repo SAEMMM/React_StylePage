@@ -42,4 +42,9 @@ const BtnModal = styled.button`
     background-color: ${props => props.overlay === 'close' ? 'white' : 'Aquamarine'};
     color: ${props => props.overlay === 'close' ? 'FireBrick' : 'Darkblue'};
     cursor: pointer;
+    &:hover {
+        background-color: ${props => props.overlay === 'close' ? 'white' : 'Lightseagreen'};
+        border: ${props => props.overlay === 'close' ? '2px solid Peru' : 'none'};
+        transition: 0.5s;
+    }
 `

@@ -47,6 +47,10 @@ const LargeBtn = styled.button`
   border-radius: 10px;
   color: ${props => props.color === 'Aquamarine' ? 'DarkBlue' : 'FireBrick'};
   cursor: pointer;
+  &:hover {
+    border: 2px solid ${props => props.color === 'Aquamarine' ? 'LightSeaGreen' : 'Peru'};
+    transition: 0.5s;
+  }
 `
 
 const Btn = styled.button`
@@ -58,6 +62,10 @@ const Btn = styled.button`
   border-radius: 10px;
   color: ${props => props.color === 'Aquamarine' ? 'DarkBlue' : 'FireBrick'};
   cursor: pointer;
+  &:hover {
+    background-color: ${props => props.color === 'Aquamarine' ? 'LightSeaGreen' : 'Peru'};
+    transition: 0.5s;
+  }
 `
 
 const BtnBox = styled.div`
