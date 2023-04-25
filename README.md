@@ -20,9 +20,11 @@ Styled-components와 React의 기본 기능 구현
 - 가격에 숫자를 입력하면 천 원 단위로 콤마(,) 생성
   
 **Modal**
+- 'Portal' 사용 : 모달창 활성 시, 전체 화면 어둡게 설정
 - 왼쪽 모달 : '닫기' 버튼을 눌려야 닫기 가능
 - 오른쪽 모달 : 'X' 버튼, 외부 영역 아무 곳이나 눌러도 닫기 가능
   
 **Select**
+- 'Portal' 사용 : Select drop-down시, 부모 div를 벗어나서 조회 가능
 - React-Select 라이브러리 사용
 ***  
